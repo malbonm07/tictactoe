@@ -3,7 +3,7 @@
     <div class="game-board">
       <!-------------------------- GAME BOARD REGISTRATION-------------------------->
       <div class="game-board__register" v-show="marks !== 'full'">
-        <input type="text" placeholder="Name" v-model="playerData.name" >
+        <input type="text" placeholder="Name" v-model="playerData.name" pattern="/^\S+(?: \S+)*$/">
         <button v-for="(mark, index) in marks" :key="index" @click="markSelected(mark)"
         :class="{'game-board__register-btn--active' : playerData.mark === mark}" 
         class="game-board__register-btn"
@@ -336,7 +336,7 @@ export default {
       font-size: 14px;
       padding: 5px;
       outline: none;
-      border: 0.5px solid #999;
+      border: 0.5px solid #4FC3F7;
       box-sizing: border-box;
     }
     &-btn {
@@ -346,7 +346,7 @@ export default {
       border: none;
       background: transparent;
       &--active {
-        background: #CFD8DC;
+        background: #4FC3F7;
       }
     }
     &-createBtn {
